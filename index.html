@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EloQuentia — Where Expression Finds Its Voice | School Partnership for Student Development</title>
+  <meta name="description"
+    content="EloQuentia is a school partnership movement for student development and creative excellence. Transforming hesitation into fearless expression through year-round communication grooming, stage skills, and stress-free, turnkey annual function direction.">
+  <meta name="keywords"
+    content="EloQuentia, school annual function management, student development, performing arts education, drama workshops school, communication public speaking kids, school annual day production, turnkey annual day organiser, school choreography">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, Caveat, Playfair Display, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Ambient Fluid Chromatic Aurora & Studio Lighting Layer -->
+  <div class="ambient-lighting" aria-hidden="true">
+    <div class="mesh-aurora aurora-violet"></div>
+    <div class="mesh-aurora aurora-amber"></div>
+    <div class="mesh-aurora aurora-cyan"></div>
+    <div class="mesh-aurora aurora-rose"></div>
+    <div class="studio-haze-grid"></div>
+    <div class="ambient-motes" id="ambientMotes"></div>
+  </div>
+
+  <!-- Floating Immersion Sound Dock (Web Audio API Synthesizer) -->
+  <div class="sound-dock-banner" id="soundDockBanner">
+    <div class="sound-dock-pill">
+      <button class="sound-toggle-btn" id="soundToggleBtn" onclick="toggleAmbientSound()" aria-label="Toggle ambient theatre audio">
+        <span class="sound-eq-icon" id="soundEqIcon">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </span>
+        <span class="sound-state-label" id="soundStateLabel">Sound: Off</span>
+      </button>
+      <span class="sound-dock-text">Turn your sound on for the immersive theatrical experience</span>
+      <button class="sound-dock-close" onclick="dismissSoundDock()" aria-label="Dismiss sound dock">&times;</button>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-nav" id="siteNav">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="EloQuentia Home">
+        <div class="logo-badge">
+          <!-- EloQuentia Warm Proscenium Logomark -->
+          <svg viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="eloGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#178582" />
+                <stop offset="60%" stop-color="#BFA181" />
+                <stop offset="100%" stop-color="#d6be9f" />
+              </linearGradient>
+            </defs>
+            <path d="M16 4L5 27h6l2.4-5.2h7.2L23 27h6L16 4zm0 7.5L18.4 17.5h-4.8L16 11.5z" fill="url(#eloGradNav)" />
+            <circle cx="16" cy="4.5" r="2.5" fill="#BFA181" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">ELOQUENTIA</span>
+          <span class="brand-subtitle">Where Expression Finds Its Voice</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#vision" class="nav-link">Vision</a></li>
+          <li><a href="#partnership" class="nav-link">5 Pillars</a></li>
+          <li><a href="#production" class="nav-link">Production</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#themes" class="nav-link">Themes</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#partnership" class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full); padding: 0.5rem 1rem;">
+          School Partnership
+        </a>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          Partner With Us
+        </a>
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Full-Viewport Theatrical Title Screen -->
+    <section class="title-screen-section" id="titleScreen">
+      <!-- Animated Fluid Moving Gradient Mesh Canvas -->
+      <div class="moving-gradient-bg" aria-hidden="true">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="gradient-sphere sphere-4"></div>
+        <div class="gradient-grid-overlay"></div>
+      </div>
+
+      <div class="container title-screen-container">
+        <!-- Brand Monogram / Proscenium Emblem -->
+        <div class="title-emblem-wrap">
+          <div class="title-emblem-badge">
+            <svg viewBox="0 0 32 32" fill="none" class="title-emblem-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="titleScreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#178582" />
+                  <stop offset="50%" stop-color="#BFA181" />
+                  <stop offset="100%" stop-color="#d6be9f" />
+                </linearGradient>
+              </defs>
+              <path d="M16 4L5 27h6l2.4-5.2h7.2L23 27h6L16 4zm0 7.5L18.4 17.5h-4.8L16 11.5z" fill="url(#titleScreenGrad)" />
+              <circle cx="16" cy="4.5" r="2.5" fill="#BFA181" />
+            </svg>
+          </div>
+          <span class="title-eyebrow-pill">
+            <span class="pulse-dot"></span>
+            <span>A School Partnership for Student Development & Creative Excellence</span>
+          </span>
+        </div>
+
+        <!-- The Grand Brand Name -->
+        <h1 class="grand-brand-name">
+          EloQuentia
+        </h1>
+
+        <!-- The Meaning & Essence Box -->
+        <div class="brand-meaning-card">
+          <div class="meaning-etymology">
+            <span class="etymology-lang">Latin: <em class="serif-display">ēloquentia</em></span>
+            <span class="etymology-sep">•</span>
+            <span class="etymology-def">The art of profound expression, fluent speech, and empathetic articulation</span>
+          </div>
+          <p class="meaning-essence">
+            Where Expression Finds Its <span class="script-flourish">Voice</span>.
+          </p>
+          <p class="meaning-description">
+            A complete experiential movement transforming classroom hesitation into fearless stage presence, fluent communication, and lifelong leadership for every school student.
+          </p>
+        </div>
+
+        <!-- Core Feature Pillars Strip -->
+        <div class="title-pillars-strip">
+          <div class="title-pillar-tag">
+            <span class="tag-icon">🎭</span>
+            <span>Drama & Performing Arts</span>
+          </div>
+          <div class="title-pillar-tag">
+            <span class="tag-icon">🎙️</span>
+            <span>Speech & Communication</span>
+          </div>
+          <div class="title-pillar-tag">
+            <span class="tag-icon">✨</span>
+            <span>Turnkey Annual Production</span>
+          </div>
+        </div>
+
+        <!-- Action CTA Row -->
+        <div class="title-cta-row">
+          <a href="#hero" class="btn btn-primary btn-lg">
+            <span>Explore The Movement</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#partnership" class="btn btn-secondary btn-lg">
+            <span>School Partnership</span>
+          </a>
+        </div>
+
+        <!-- Scroll Down Cue -->
+        <a href="#hero" class="scroll-down-cue" aria-label="Scroll down to explore">
+          <span class="scroll-cue-text">Scroll to Discover</span>
+          <div class="scroll-mouse-icon">
+            <div class="scroll-wheel"></div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="scroll-arrow">
+            <path d="M7 10l5 5 5-5" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="pulse-dot"></span>
+            <span class="hero-pill-tag">ELOQUENTIA</span>
+            <span class="hero-pill-sep">•</span>
+            <span>A School Partnership for Student Development & Creative Excellence</span>
+          </div>
+
+          <h1 class="hero-title">
+            Where Expression Finds Its <span class="script-flourish">Voice</span>.
+          </h1>
+
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+            <span class="feature-mini-pill" style="background: rgba(194, 120, 68, 0.08); border-color: rgba(194, 120, 68, 0.2); color: var(--terracotta-primary); font-weight: 700;">
+              Performing Arts
+            </span>
+            <span class="feature-mini-pill" style="background: rgba(212, 162, 76, 0.08); border-color: rgba(212, 162, 76, 0.2); color: var(--gold-deep); font-weight: 700;">
+              Communication
+            </span>
+            <span class="feature-mini-pill" style="background: rgba(232, 168, 56, 0.08); border-color: rgba(232, 168, 56, 0.2); color: var(--amber-deep); font-weight: 700;">
+              Leadership Excellence
+            </span>
+          </div>
+
+          <p class="hero-description">
+            Behind every quiet face in the classroom is a powerful voice waiting to be heard—all it needs is the right stage.
+            <strong>EloQuentia</strong> is a complete experiential movement: transforming hesitation into fearless expression through
+            year-round communication grooming, stage skills, and stress-free, end-to-end annual function direction.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#partnership" class="btn btn-primary btn-lg">
+              <span>Explore School Partnership</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#production" class="btn btn-secondary btn-lg">
+              <span>Concept to Curtain Call</span>
+            </a>
+          </div>
+
+          <!-- Institutional Trust Strip -->
+          <div class="hero-trust-bar">
+            <div class="trust-label">Empowering Campuses Across Central & Northern India</div>
+            <div class="school-badges-row">
+              <span class="school-pill">Delhi Public School Indore</span>
+              <span class="school-pill">Sage International School Bhopal</span>
+              <span class="school-pill">Heritage & Public Academies</span>
+              <span class="school-pill">Premier Day-Boarding Schools</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase Card -->
+        <div class="hero-visual-col">
+          <div class="stage-spectacle-card">
+            <div class="stage-card-header">
+              <div class="live-indicator">
+                <span class="rec-blink"></span>
+                <span>The Stage Experience</span>
+              </div>
+              <span class="stage-venue-tag">Student Transformation</span>
+            </div>
+
+            <div class="stage-image-container">
+              <img src="assets/hero_stage.jpg"
+                alt="Young student stepping into the spotlight on stage during grand school annual function"
+                id="heroStageImg">
+              <div class="stage-overlay-gradient"></div>
+            </div>
+
+            <div class="stage-card-body">
+              <div class="stage-meta-row">
+                <div class="production-name">"Transforming Hesitation into Fearless Expression"</div>
+                <div class="production-specs">Year-Round Training • Grand Showcase</div>
+              </div>
+              <div class="stage-quote-preview">
+                "Behind every quiet face in the classroom is a powerful voice waiting to be heard—all it needs is the right stage."
+              </div>
+              <div class="stage-features-strip">
+                <div class="feature-mini-pill">
+                  <span class="value">Drama</span>
+                  <span class="label">& Expression</span>
+                </div>
+                <div class="feature-mini-pill">
+                  <span class="value">Speech</span>
+                  <span class="label">& Confidence</span>
+                </div>
+                <div class="feature-mini-pill">
+                  <span class="value">Turnkey</span>
+                  <span class="label">Production</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Metrics Bar -->
+    <section class="metrics-section" id="impact" aria-label="EloQuentia Impact Statistics">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">100+</div>
+            <div class="metric-label">Successful School Events Delivered</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">50,000+</div>
+            <div class="metric-label">Students Impacted Across Schools</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">30+</div>
+            <div class="metric-label">Partner Schools Across Regions</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">98%</div>
+            <div class="metric-label">School Leadership Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about" style="padding: 5rem 0 3.5rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <span>About EloQuentia</span>
+          </div>
+          <h2 class="section-title">
+            Transforming Hesitation into <span class="script-flourish">Fearless Expression</span>
+          </h2>
+          <p class="section-subtitle">
+            At EloQuentia, we are a complete experiential movement dedicated to school student development and creative excellence.
+          </p>
+        </div>
+
+        <div class="quote-editorial-box">
+          <p class="quote-editorial-text">
+            "Behind every quiet face in the classroom is a powerful voice waiting to be heard—all it needs is the right stage."
+          </p>
+          <span class="quote-editorial-sub">The EloQuentia Guiding Conviction</span>
+        </div>
+
+        <div style="max-width: 880px; margin: 0 auto; text-align: center; color: var(--text-body); font-size: 1.15rem; line-height: 1.8;">
+          <p>
+            Traditional academic environments often focus on textbook retention, leaving students hesitant when facing an audience.
+            <strong>EloQuentia</strong> bridges this critical gap. We partner with forward-thinking schools to build confident, articulate,
+            and empathetic young leaders through year-round communication grooming and performing arts education, culminating in
+            stress-free, breathtaking annual function productions that leave parents and educators in awe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-section" id="vision" style="padding: 3rem 0 5rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+            </svg>
+            <span>Our Compass</span>
+          </div>
+          <h2 class="section-title">
+            Our <span class="script-flourish">Vision & Mission</span>
+          </h2>
+        </div>
+
+        <div class="quote-editorial-box" style="margin-top: 1rem; margin-bottom: 2.5rem;">
+          <p class="quote-editorial-text">
+            "Vision without expression is just a dream—our mission is to give every student the courage to step up and speak out."
+          </p>
+          <span class="quote-editorial-sub">Pillar of Purpose</span>
+        </div>
+
+        <div class="vision-mission-grid">
+          <!-- Vision Card -->
+          <div class="vision-mission-card">
+            <div class="card-icon-pill">
+              <span class="pill-emoji">👁️</span>
+              <span class="pill-label">Our Vision</span>
+            </div>
+            <h3 class="vision-mission-title">Nurturing Articulate Leaders</h3>
+            <p class="vision-mission-desc">
+              To create a generation of empathetic, confident, and articulate individuals who navigate life's biggest stages with clarity, poise, and courage.
+            </p>
+          </div>
+
+          <!-- Mission Card -->
+          <div class="vision-mission-card">
+            <div class="card-icon-pill">
+              <span class="pill-emoji">🎯</span>
+              <span class="pill-label">Our Mission</span>
+            </div>
+            <h3 class="vision-mission-title">Empowering the School Ecosystem</h3>
+            <p class="vision-mission-desc">
+              To seamlessly integrate performing arts and life-skills education into the school ecosystem—empowering students with lifelong communication skills while taking the complete burden of annual production off the school's shoulders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Year-Round School Partnership: 5 Pillars -->
+    <section class="partnership-section" id="partnership" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+            <span>Student Development Framework</span>
+          </div>
+          <h2 class="section-title">
+            Year-Round <span class="script-flourish">School Partnership</span>
+          </h2>
+          <p class="section-subtitle">
+            A comprehensive, grade-tailored developmental curriculum built to empower every student on campus.
+          </p>
+        </div>
+
+        <div class="quote-editorial-box" style="margin-top: 1rem; margin-bottom: 2rem;">
+          <p class="quote-editorial-text">
+            "Confidence isn't built in a single day—it is nurtured through every stage step, every spoken word, and every overcome fear, all year long."
+          </p>
+          <span class="quote-editorial-sub">The EloQuentia Pedagogical Principle</span>
+        </div>
+
+        <!-- 5 Pillars Grid -->
+        <div class="pillars-5-grid">
+          <!-- Pillar 1 -->
+          <div class="pillar-feature-card">
+            <div class="pillar-badge-circle">🎭</div>
+            <h3 class="pillar-feature-name">Drama & Expression</h3>
+            <p class="pillar-feature-desc">
+              Voice modulation, emotional range, character embodiment, and authentic physical expression.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-feature-card">
+            <div class="pillar-badge-circle">🎙️</div>
+            <h3 class="pillar-feature-name">Speech & Communication</h3>
+            <p class="pillar-feature-desc">
+              Overcoming glossophobia, clear diction, articulation, debate mastery, and confident student oratory.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-feature-card">
+            <div class="pillar-badge-circle">💡</div>
+            <h3 class="pillar-feature-name">Creativity & Imagination</h3>
+            <p class="pillar-feature-desc">
+              Storytelling, improvisational theater, creative thinking, and artistic problem-solving.
+            </p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="pillar-feature-card">
+            <div class="pillar-badge-circle">👥</div>
+            <h3 class="pillar-feature-name">Confidence & Personality</h3>
+            <p class="pillar-feature-desc">
+              Self-belief grooming, positive body language, empathetic teamwork, and active listening.
+            </p>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="pillar-feature-card">
+            <div class="pillar-badge-circle">⭐</div>
+            <h3 class="pillar-feature-name">Leadership & Performance</h3>
+            <p class="pillar-feature-desc">
+              Stage presence, ensemble synchronization, public address, and executive poise under pressure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Annual Function Production: Concept to Curtain Call -->
+    <section class="turnkey-production-section" id="production" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <span>Annual Function Direction</span>
+          </div>
+          <h2 class="section-title">
+            From Concept to Curtain Call — <span class="script-flourish">We Handle It All</span>.
+          </h2>
+          <p class="section-subtitle">
+            Say goodbye to stressed teachers and chaotic rehearsals. EloQuentia provides complete turnkey ownership of your school's annual function, letting your faculty enjoy the evening as proud spectators.
+          </p>
+        </div>
+
+        <!-- 5 Stages Strip -->
+        <div class="concept-to-curtain-strip">
+          <div class="concept-stage-card">
+            <span class="concept-stage-num">01</span>
+            <div class="concept-stage-icon">🎨</div>
+            <h3 class="concept-stage-title">Creative Concept & Theme</h3>
+            <p class="concept-stage-desc">Unifying storylines rooted in your school ethos, history, and moral aspirations.</p>
+          </div>
+
+          <div class="concept-stage-card">
+            <span class="concept-stage-num">02</span>
+            <div class="concept-stage-icon">📜</div>
+            <h3 class="concept-stage-title">Script Writing & Direction</h3>
+            <p class="concept-stage-desc">Bilingual English & Hindi scripts, cue annotations, and grade-appropriate roles.</p>
+          </div>
+
+          <div class="concept-stage-card">
+            <span class="concept-stage-num">03</span>
+            <div class="concept-stage-icon">💃</div>
+            <h3 class="concept-stage-title">Choreography & Training</h3>
+            <p class="concept-stage-desc">Classical, folk, and contemporary routines with mass field synchronization.</p>
+          </div>
+
+          <div class="concept-stage-card">
+            <span class="concept-stage-num">04</span>
+            <div class="concept-stage-icon">👗</div>
+            <h3 class="concept-stage-title">Costumes, Sets & Production</h3>
+            <p class="concept-stage-desc">Period-accurate attire, modular 3D sets, handcrafted props, and makeup artists.</p>
+          </div>
+
+          <div class="concept-stage-card">
+            <span class="concept-stage-num">05</span>
+            <div class="concept-stage-icon">⚡</div>
+            <h3 class="concept-stage-title">Seamless On-Ground Execution</h3>
+            <p class="concept-stage-desc">Concert line arrays, intelligent moving lights, LED backdrop, and zero-chaos backstage.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Stage Simulator Console -->
+        <div class="stage-simulator-box">
+          <div class="simulator-header">
+            <div class="simulator-title-group">
+              <span class="sim-indicator"></span>
+              <span class="simulator-title">Live DMX Stage Cue & Lighting Simulator</span>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--terracotta-primary); font-family: var(--font-mono); font-weight: 700;">
+              SMPTE TIMECODE SIMULATOR ACTIVE
+            </div>
+          </div>
+
+          <div class="simulator-viewport lighting-royale" id="simViewport">
+            <div class="sim-stage-backdrop" style="background-image: url('assets/hero_stage.jpg');"></div>
+
+            <div class="sim-light-beams">
+              <div class="light-cone cone-1"></div>
+              <div class="light-cone cone-2"></div>
+              <div class="light-cone cone-3"></div>
+              <div class="light-cone cone-4"></div>
+            </div>
+
+            <div class="sim-stage-actors">
+              <div class="sim-screen-content">
+                <div class="sim-active-cue-title" id="simCueTitle">Scene 04: The Royal Coronation</div>
+                <div class="sim-active-cue-desc" id="simCueDesc">Lighting: Regal Burnished Amber • SFX: Low Fog Cloud • Audio: Royal Choral Fanfare</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="simulator-controls">
+            <div class="sim-control-group">
+              <span class="sim-ctrl-label">Switch Stage Lighting Preset:</span>
+              <button class="sim-btn-preset active"
+                onclick="setStageLighting('royale', 'Scene 04: The Royal Coronation', 'Lighting: Regal Burnished Amber • SFX: Low Fog Cloud • Audio: Royal Choral Fanfare')">
+                👑 Golden Royale
+              </button>
+              <button class="sim-btn-preset"
+                onclick="setStageLighting('drama', 'Scene 09: Battle of Valour & Awakening', 'Lighting: Theatrical Crimson Strobe • SFX: War Drums & Sparks • Audio: Dramatic Foley')">
+                ⚔️ Dramatic Crimson
+              </button>
+              <button class="sim-btn-preset"
+                onclick="setStageLighting('sapphire', 'Scene 12: Night in the Enchanted Grove', 'Lighting: Sage & Moonlight Green • SFX: Fairy Dust Haze • Audio: Flute Jugalbandi')">
+                🌙 Sage Odyssey
+              </button>
+              <button class="sim-btn-preset"
+                onclick="setStageLighting('emerald', 'Scene 15: Grand Earth Finale & Anthem', 'Lighting: Golden Bloom & Confetti • SFX: Cold Pyrotechnics • Audio: 500-Voice Choir')">
+                🌿 Golden Bloom
+              </button>
+            </div>
+
+            <div>
+              <button class="btn btn-primary btn-sm" onclick="triggerSimulatorSFX()">
+                ✨ Fire Cold Pyro Spark Blast
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our 6 Core Services -->
+    <section class="services-section" id="services" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
+            </svg>
+            <span>What We Deliver</span>
+          </div>
+          <h2 class="section-title">
+            Our <span class="script-flourish">Services</span>
+          </h2>
+          <p class="section-subtitle">
+            Comprehensive creative, educational, and theatrical programmes designed to integrate effortlessly into your school's annual calendar.
+          </p>
+        </div>
+
+        <div class="services-grid-6">
+          <!-- Service 1 -->
+          <div class="service-card-premium">
+            <div class="service-card-badge">🎭</div>
+            <h3 class="service-card-title">Annual Function Production</h3>
+            <p class="service-card-desc">
+              End-to-end turnkey direction: bespoke scripts, concert AV, intelligent lighting, stagecraft, costumes, and seamless on-ground coordination.
+            </p>
+            <ul class="service-features-list">
+              <li>Central theme ideation & scriptwriting</li>
+              <li>Mass choreography & dance drills</li>
+              <li>Concert line-array audio & DMX lighting</li>
+              <li>Zero hassle for teachers & administrators</li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card-premium">
+            <div class="service-card-badge">🎬</div>
+            <h3 class="service-card-title">Drama & Theatre Workshops</h3>
+            <p class="service-card-desc">
+              Immersive acting masterclasses that nurture voice projection, emotional range, improvisational confidence, and stage blocking.
+            </p>
+            <ul class="service-features-list">
+              <li>Character embodiment & monologue work</li>
+              <li>Movement, mime & physical theater</li>
+              <li>Overcoming stage hesitation & self-doubt</li>
+              <li>Final showcase for parents and peers</li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card-premium">
+            <div class="service-card-badge">🎙️</div>
+            <h3 class="service-card-title">Communication & Public Speaking</h3>
+            <p class="service-card-desc">
+              Transforming hesitant speakers into eloquent orators capable of addressing assemblies, debates, and inter-school elocutions.
+            </p>
+            <ul class="service-features-list">
+              <li>Overcoming stage fear & nervousness</li>
+              <li>Speech structure, rhetoric & storytelling</li>
+              <li>Microphone technique & voice modulation</li>
+              <li>Extempore & debate readiness</li>
+            </ul>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card-premium">
+            <div class="service-card-badge">🌟</div>
+            <h3 class="service-card-title">Personality Development</h3>
+            <p class="service-card-desc">
+              Comprehensive grooming in poise, body language, self-awareness, active listening, and social emotional intelligence.
+            </p>
+            <ul class="service-features-list">
+              <li>Poise, posture & confident eye contact</li>
+              <li>Empathetic communication & active listening</li>
+              <li>Team dynamics & collaborative leadership</li>
+              <li>Building resilient self-worth in children</li>
+            </ul>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card-premium">
+            <div class="service-card-badge">👩‍🏫</div>
+            <h3 class="service-card-title">Teacher Training</h3>
+            <p class="service-card-desc">
+              Empowering faculty with creative drama-in-education tools, voice preservation techniques, and joyful classroom engagement methods.
+            </p>
+            <ul class="service-features-list">
+              <li>Theatre-in-Education (TiE) methodologies</li>
+              <li>Vocal hygiene & projection for educators</li>
+              <li>Facilitating interactive student discussions</li>
+              <li>Stress-free event & assembly coordination</li>
+            </ul>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card-premium">
+            <div class="service-card-badge">🎪</div>
+            <h3 class="service-card-title">Customized School Events</h3>
+            <p class="service-card-desc">
+              Tailored event curation for Founders' Day, Investiture Ceremonies, Cultural Festivals, and Jubilee milestone celebrations.
+            </p>
+            <ul class="service-features-list">
+              <li>Grand Investiture ceremonial march-pasts</li>
+              <li>Founders' Day theatrical chronicles</li>
+              <li>Sports Day grand opening formations</li>
+              <li>Silver & Golden Jubilee celebrations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Themes We Bring To Life -->
+    <section class="themes-section" id="themes" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <span>Our Portfolio</span>
+          </div>
+          <h2 class="section-title">
+            Themes We Bring to <span class="script-flourish">Life</span>
+          </h2>
+          <p class="section-subtitle">
+            A glimpse of the experiences we have created for schools and students. From grand historical epics to cosmic voyages, every production tells an unforgettable story.
+          </p>
+        </div>
+
+        <!-- 6 Thematic Genres -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem;">
+          <div style="background: rgba(255, 253, 250, 0.88); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1rem; text-align: center;">
+            <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🌸</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-title);">Cultural Celebrations</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.25rem;">Folk dances & Indian traditions</div>
+          </div>
+          <div style="background: rgba(255, 253, 250, 0.88); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1rem; text-align: center;">
+            <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🏹</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-title);">Mythology & Heritage</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.25rem;">Epics of valor & moral sagas</div>
+          </div>
+          <div style="background: rgba(255, 253, 250, 0.88); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1rem; text-align: center;">
+            <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🌍</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-title);">Social Messages</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.25rem;">Environment, kindness, unity</div>
+          </div>
+          <div style="background: rgba(255, 253, 250, 0.88); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1rem; text-align: center;">
+            <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">📜</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-title);">Literary Adaptations</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.25rem;">Shakespeare, Tagore, folklore</div>
+          </div>
+          <div style="background: rgba(255, 253, 250, 0.88); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1rem; text-align: center;">
+            <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🌐</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-title);">Global Cultures</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.25rem;">World rhythms & UN harmony</div>
+          </div>
+          <div style="background: rgba(255, 253, 250, 0.88); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem 1rem; text-align: center;">
+            <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">✨</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--text-title);">Original Concepts</div>
+            <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.25rem;">School milestones & dreams</div>
+          </div>
+        </div>
+
+        <div class="themes-showcase-box">
+          <div class="theme-tab-nav" role="tablist">
+            <button class="theme-tab-btn active" onclick="switchThemeTab('heritage')" role="tab" id="tab-heritage">
+              <span class="theme-tab-icon">🏰</span>
+              <span>Epics of Heritage</span>
+            </button>
+            <button class="theme-tab-btn" onclick="switchThemeTab('cosmos')" role="tab" id="tab-cosmos">
+              <span class="theme-tab-icon">🌌</span>
+              <span>Cosmic Odyssey</span>
+            </button>
+            <button class="theme-tab-btn" onclick="switchThemeTab('literature')" role="tab" id="tab-literature">
+              <span class="theme-tab-icon">📜</span>
+              <span>Shakespeare & Lore</span>
+            </button>
+            <button class="theme-tab-btn" onclick="switchThemeTab('navarasa')" role="tab" id="tab-navarasa">
+              <span class="theme-tab-icon">🦚</span>
+              <span>Navarasa Traditions</span>
+            </button>
+          </div>
+
+          <!-- Tab Pane 1: Heritage -->
+          <div class="theme-tab-pane active" id="pane-heritage">
+            <div class="theme-detail-grid">
+              <div>
+                <span class="theme-tag-pill">Mythology & Heritage</span>
+                <h3 class="theme-headline">"Dastaan-e-Hind: Chronicles of Valour"</h3>
+                <p class="theme-narrative">
+                  A grand historical and cultural narrative charting India's legendary dynasties, warrior queens, and the modern constitutional renaissance. Students embody historical icons with period-accurate dialogue, royal Maratha and Rajput court dances, tribal folklore, and patriotic choral harmonies.
+                </p>
+                <div class="theme-breakdown-list">
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎭 Theatrical Drama</div>
+                    <div class="breakdown-card-desc">Multi-scene drama detailing Ashoka's enlightenment, Rani Durgavati, and the dawn of freedom.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎵 Musical Orchestration</div>
+                    <div class="breakdown-card-desc">Sitar, nagada, live brass instruments, and a 100-student choir singing original anthems.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">💃 Dance Formations</div>
+                    <div class="breakdown-card-desc">Kathak darbar routines, martial drills, and tri-colour field formations with 250 students.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎨 Scenography</div>
+                    <div class="breakdown-card-desc">Palace archway sets with 3D animated LED fort ramparts and golden lighting washes.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="theme-stage-preview">
+                <div class="theme-meta-title">Theme Production Parameters</div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Ideal Student Cast:</span>
+                  <span class="theme-stat-val">350 – 850 Students</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Target Grades:</span>
+                  <span class="theme-stat-val">KG to Class 12th</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Costume Repertoire:</span>
+                  <span class="theme-stat-val">Royal Silk, Armor, Freedom Khadi</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Special Stage Effect:</span>
+                  <span class="theme-stat-val">Low-lying fog cloud & tri-colour cold sparks</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                  <button class="btn btn-primary btn-sm" style="width: 100%;"
+                    onclick="openConsultationModal('Theme: Dastaan-e-Hind')">
+                    Request Full Script Draft & Synopsis
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane 2: Cosmos -->
+          <div class="theme-tab-pane" id="pane-cosmos">
+            <div class="theme-detail-grid">
+              <div>
+                <span class="theme-tag-pill">Social Messages & Original Concepts</span>
+                <h3 class="theme-headline">"Vasudhaiva Kutumbakam: The Cosmic Odyssey"</h3>
+                <p class="theme-narrative">
+                  A visually breathtaking production exploring human harmony with nature and celestial space exploration. From the elemental forces (Earth, Water, Fire, Air, Space) to India's space missions, culminating in a celebration of universal brotherhood and planetary stewardship.
+                </p>
+                <div class="theme-breakdown-list">
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎭 Theatrical Drama</div>
+                    <div class="breakdown-card-desc">Time-travel dialogue between ancient astronomers and young student scientists.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎵 Musical Orchestration</div>
+                    <div class="breakdown-card-desc">Synthesized orchestral soundscape fused with classical violin raga melodies and youth choir.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">💃 Dance Formations</div>
+                    <div class="breakdown-card-desc">Contemporary cosmic dance with glowing fiber-optic props and stellar constellation drills.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎨 Scenography</div>
+                    <div class="breakdown-card-desc">Nebula projection mapping on curved LED screens, laser arrays, and stellar beam sweeps.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="theme-stage-preview">
+                <div class="theme-meta-title">Theme Production Parameters</div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Ideal Student Cast:</span>
+                  <span class="theme-stat-val">300 – 750 Students</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Target Grades:</span>
+                  <span class="theme-stat-val">Primary, Middle & Senior Wings</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Costume Repertoire:</span>
+                  <span class="theme-stat-val">Celestial metallic robes & LED-lit elements</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Special Stage Effect:</span>
+                  <span class="theme-stat-val">Volumetric laser haze & starfield drop</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                  <button class="btn btn-primary btn-sm" style="width: 100%;"
+                    onclick="openConsultationModal('Theme: Cosmic Odyssey')">
+                    Request Full Script Draft & Synopsis
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane 3: Literature -->
+          <div class="theme-tab-pane" id="pane-literature">
+            <div class="theme-detail-grid">
+              <div>
+                <span class="theme-tag-pill">Literary Adaptations & Global Cultures</span>
+                <h3 class="theme-headline">"Shakespeare Reimagined: The Seven Ages"</h3>
+                <p class="theme-narrative">
+                  A theatrical celebration of world literature adapted into an energetic student musical. Weaving together As You Like It, A Midsummer Night's Dream, and timeless Indian folklore into a joyful exploration of youth, growth, and wisdom.
+                </p>
+                <div class="theme-breakdown-list">
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎭 Theatrical Drama</div>
+                    <div class="breakdown-card-desc">Accessible poetic dialogues adapted for fluent student delivery and comic timing.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎵 Musical Orchestration</div>
+                    <div class="breakdown-card-desc">Renaissance madrigals blended with Indian bansuri and acoustic string quartets.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">💃 Dance Formations</div>
+                    <div class="breakdown-card-desc">Forest fairy ballet, courtly minuet, and Broadway-inspired ensemble tap and swing.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎨 Scenography</div>
+                    <div class="breakdown-card-desc">Enchanted forest groves with glowing floral props and atmospheric moonlight washes.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="theme-stage-preview">
+                <div class="theme-meta-title">Theme Production Parameters</div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Ideal Student Cast:</span>
+                  <span class="theme-stat-val">250 – 600 Students</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Target Grades:</span>
+                  <span class="theme-stat-val">Grades 3rd to 12th</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Costume Repertoire:</span>
+                  <span class="theme-stat-val">Elizabethan ruffs & mystical woodland attire</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Special Stage Effect:</span>
+                  <span class="theme-stat-val">Moonlight gobos & theatrical bubble curtain</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                  <button class="btn btn-primary btn-sm" style="width: 100%;"
+                    onclick="openConsultationModal('Theme: Shakespeare Reimagined')">
+                    Request Full Script Draft & Synopsis
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane 4: Navarasa -->
+          <div class="theme-tab-pane" id="pane-navarasa">
+            <div class="theme-detail-grid">
+              <div>
+                <span class="theme-tag-pill">Cultural Celebrations & Classical Heritage</span>
+                <h3 class="theme-headline">"Navarasa: The Nine Classical Emotions"</h3>
+                <p class="theme-narrative">
+                  A dazzling masterwork exploring the nine universal rasas (emotions) of Indian aesthetics: Shringara (Love), Hasya (Laughter), Karuna (Compassion), Raudra (Fury), Vira (Heroism), Bhayanaka (Fear), Bibhatsa (Disgust), Adbhuta (Wonder), and Shanta (Peace).
+                </p>
+                <div class="theme-breakdown-list">
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎭 Theatrical Drama</div>
+                    <div class="breakdown-card-desc">Dramatic vignettes exploring compassion, courage, and moral wisdom across history.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎵 Musical Orchestration</div>
+                    <div class="breakdown-card-desc">Classical jugalbandi: Tabla, mridangam, flute, and student classical vocal choir.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">💃 Dance Formations</div>
+                    <div class="breakdown-card-desc">Bharatanatyam, Odissi, and Kathak fusion with semi-classical mass drill formations.</div>
+                  </div>
+                  <div class="breakdown-card">
+                    <div class="breakdown-card-title">🎨 Scenography</div>
+                    <div class="breakdown-card-desc">Temple bell mandap pillars, glowing lotus set pieces, and warm royal temple lighting.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="theme-stage-preview">
+                <div class="theme-meta-title">Theme Production Parameters</div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Ideal Student Cast:</span>
+                  <span class="theme-stat-val">300 – 700 Students</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Target Grades:</span>
+                  <span class="theme-stat-val">All School Wings (KG to 12th)</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Costume Repertoire:</span>
+                  <span class="theme-stat-val">Classical Temple Zari & Vibrant Folk Silks</span>
+                </div>
+                <div class="theme-stat-row">
+                  <span class="theme-stat-name">Special Stage Effect:</span>
+                  <span class="theme-stat-val">Warm golden follow-spots, petal drop, holy aura haze</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                  <button class="btn btn-primary btn-sm" style="width: 100%;"
+                    onclick="openConsultationModal('Theme: Navarasa')">
+                    Request Full Script Draft & Synopsis
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Budget Allocation Planner -->
+    <section class="budget-section" id="budget" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" />
+            </svg>
+            <span>Fiscal Transparency</span>
+          </div>
+          <h2 class="section-title">
+            Annual Function <span class="script-flourish">Budget Allocation</span> Planner
+          </h2>
+          <p class="section-subtitle">
+            Every school has distinct institutional priorities and fiscal boundaries. We provide transparent line-item estimates across AV tech, costumes, choreography, sets, and direction with zero hidden markups.
+          </p>
+        </div>
+
+        <div class="budget-calculator-card">
+          <div class="calculator-grid">
+            <!-- Left: Inputs & Sliders -->
+            <div class="calc-inputs-col">
+              <div class="calc-input-block">
+                <div class="calc-label-row">
+                  <span class="calc-label">👥 Total Student Performers:</span>
+                  <span class="calc-val-display" id="valStudents">450 Students</span>
+                </div>
+                <input type="range" class="calc-slider" id="sliderStudents" min="150" max="1200" step="50" value="450"
+                  oninput="recalculateBudget()">
+                <div style="display: flex; justify-content: space-between; font-size: 0.725rem; color: var(--text-dim); margin-top: 4px;">
+                  <span>150 (Intimate Play)</span>
+                  <span>600 (Mega Production)</span>
+                  <span>1,200+ (Entire Academy)</span>
+                </div>
+              </div>
+
+              <div class="calc-input-block">
+                <div class="calc-label-row">
+                  <span class="calc-label">🏟️ Expected Audience / Parents:</span>
+                  <span class="calc-val-display" id="valAudience">3,000 Guests</span>
+                </div>
+                <input type="range" class="calc-slider" id="sliderAudience" min="800" max="8000" step="200" value="3000"
+                  oninput="recalculateBudget()">
+                <div style="display: flex; justify-content: space-between; font-size: 0.725rem; color: var(--text-dim); margin-top: 4px;">
+                  <span>800 (Auditorium)</span>
+                  <span>3,500 (Amphitheatre)</span>
+                  <span>8,000+ (Sports Grounds)</span>
+                </div>
+              </div>
+
+              <div class="calc-input-block">
+                <div class="calc-label-row">
+                  <span class="calc-label">📍 Venue Setup Type:</span>
+                </div>
+                <div class="calc-pills-row">
+                  <button type="button" class="calc-choice-btn" data-venue="auditorium" onclick="setVenue('auditorium')">
+                    🏛️ Indoor Auditorium
+                  </button>
+                  <button type="button" class="calc-choice-btn selected" data-venue="amphitheatre" onclick="setVenue('amphitheatre')">
+                    🏟️ Open Amphitheatre
+                  </button>
+                  <button type="button" class="calc-choice-btn" data-venue="ground" onclick="setVenue('ground')">
+                    🎪 School Sports Grounds
+                  </button>
+                </div>
+              </div>
+
+              <div class="calc-input-block">
+                <div class="calc-label-row">
+                  <span class="calc-label">⭐ Production Tier:</span>
+                </div>
+                <div class="calc-pills-row">
+                  <button type="button" class="calc-choice-btn" data-tier="executive" onclick="setTier('executive')">
+                    Executive Academy
+                  </button>
+                  <button type="button" class="calc-choice-btn selected" data-tier="heritage" onclick="setTier('heritage')">
+                    Heritage Grandeur
+                  </button>
+                  <button type="button" class="calc-choice-btn" data-tier="royale" onclick="setTier('royale')">
+                    Signature Royale
+                  </button>
+                </div>
+              </div>
+
+              <div class="calc-input-block">
+                <div class="calc-label-row">
+                  <span class="calc-label">📦 Production Modules Included:</span>
+                </div>
+                <div class="calc-modules-grid">
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modScript" checked onchange="recalculateBudget()">
+                    <span>Original Play Script & Theme</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modMusic" checked onchange="recalculateBudget()">
+                    <span>Studio Music & Choir Training</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modDance" checked onchange="recalculateBudget()">
+                    <span>Choreography Squad (8 Wks)</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modSound" checked onchange="recalculateBudget()">
+                    <span>Concert Sound & Wireless Mics</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modLight" checked onchange="recalculateBudget()">
+                    <span>Intelligent DMX Moving Lights</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modLed" checked onchange="recalculateBudget()">
+                    <span>P2.6 Curved LED Video Backdrop</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modCostumes" checked onchange="recalculateBudget()">
+                    <span>Custom Costumes, Props & Makeup</span>
+                  </label>
+                  <label class="module-checkbox-label">
+                    <input type="checkbox" id="modBroadcast" checked onchange="recalculateBudget()">
+                    <span>4K Multi-Cam & Drone Video</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Output Breakdown -->
+            <div class="calc-summary-col">
+              <div class="budget-badge-pill">
+                <span>ESTIMATED TURNKEY ALLOCATION</span>
+              </div>
+              <div class="budget-total-figure" id="totalEstimateDisplay">
+                ₹8.45 Lakhs
+              </div>
+              <div class="budget-per-student" id="perStudentDisplay">
+                (~ ₹1,878 per student performer)
+              </div>
+
+              <div class="line-items-wrapper">
+                <div class="calc-line-item">
+                  <span class="line-name">Script, Direction & Vocal Tracks</span>
+                  <span class="line-val" id="valScriptLine">₹1.40L</span>
+                </div>
+                <div class="calc-line-item">
+                  <span class="line-name">Dance Choreography & Rehearsals</span>
+                  <span class="line-val" id="valDanceLine">₹1.85L</span>
+                </div>
+                <div class="calc-line-item">
+                  <span class="line-name">Concert Audio, Line Arrays & Wireless RF</span>
+                  <span class="line-val" id="valSoundLine">₹1.60L</span>
+                </div>
+                <div class="calc-line-item">
+                  <span class="line-name">Intelligent Lights, Truss & DMX Cues</span>
+                  <span class="line-val" id="valLightLine">₹1.35L</span>
+                </div>
+                <div class="calc-line-item">
+                  <span class="line-name">P2.6 Curved LED Video Walls & Sets</span>
+                  <span class="line-val" id="valLedLine">₹1.25L</span>
+                </div>
+                <div class="calc-line-item">
+                  <span class="line-name">Costumes, Theatrical Props & Makeup</span>
+                  <span class="line-val" id="valCostumeLine">₹1.00L</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <button class="btn btn-primary" style="width: 100%; padding: 0.95rem;" onclick="openConsultationModal('Budget Estimate Request')">
+                  <span>Request Itemized RFP & Date Lock</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our 4-Stage Process -->
+    <section class="process-section" id="process" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+            <span>Proven Cadence</span>
+          </div>
+          <h2 class="section-title">
+            Our <span class="script-flourish">Process</span>
+          </h2>
+          <p class="section-subtitle">
+            A structured four-step methodology ensuring zero disruption to academic schedules while building towards an unforgettable showcase.
+          </p>
+        </div>
+
+        <div class="process-grid-4">
+          <div class="process-step-box">
+            <div class="process-step-num">01</div>
+            <h3 class="process-step-name">Consultation</h3>
+            <p class="process-step-desc">
+              Deep alignment to understand the school's unique ethos, venue parameters, student demographics, and educational milestones.
+            </p>
+          </div>
+
+          <div class="process-step-box">
+            <div class="process-step-num">02</div>
+            <h3 class="process-step-name">Planning</h3>
+            <p class="process-step-desc">
+              Developing creative concepts, original bilingual scripts, clear timelines, rehearsal schedules, and custom programmes.
+            </p>
+          </div>
+
+          <div class="process-step-box">
+            <div class="process-step-num">03</div>
+            <h3 class="process-step-name">Execution</h3>
+            <p class="process-step-desc">
+              Rigorous student training, stage blocking, scenic fabrication, concert-grade AV rigging, and on-ground coordination.
+            </p>
+          </div>
+
+          <div class="process-step-box">
+            <div class="process-step-num">04</div>
+            <h3 class="process-step-name">Evaluation</h3>
+            <p class="process-step-desc">
+              Flawless showcase performance, comprehensive feedback from school leadership, and continuous student growth review.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us? -->
+    <section class="why-us-section" id="why-us" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <span>The EloQuentia Difference</span>
+          </div>
+          <h2 class="section-title">
+            Why <span class="script-flourish">Choose Us?</span>
+          </h2>
+          <p class="section-subtitle">
+            We don't just stage events; we build confident young leaders while removing all operational stress from your faculty.
+          </p>
+        </div>
+
+        <div class="why-choose-grid-4">
+          <div class="why-card">
+            <span class="why-card-icon">💡</span>
+            <h3 class="why-card-title">Unique Concepts</h3>
+            <p class="why-card-desc">
+              Creative ideas tailored specifically for every school's heritage, institutional values, and educational milestones.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span class="why-card-icon">🎓</span>
+            <h3 class="why-card-title">Pedagogical & Production Expertise</h3>
+            <p class="why-card-desc">
+              Seasoned directors, dramatists, and choreographers passionate about nurturing student potential and artistic excellence.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span class="why-card-icon">⚙️</span>
+            <h3 class="why-card-title">Attention to Detail</h3>
+            <p class="why-card-desc">
+              Seamless execution from initial script rehearsal to the final standing ovation, ensuring complete child safety and zero chaos.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span class="why-card-icon">❤️</span>
+            <h3 class="why-card-title">Student First Approach</h3>
+            <p class="why-card-desc">
+              Meaningful stage experiences that create lasting impact, transforming classroom hesitation into lifelong self-belief.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section" id="testimonials" style="padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <span>Verified School Reviews</span>
+          </div>
+          <h2 class="section-title">
+            What <span class="script-flourish">Schools Say</span>
+          </h2>
+          <p class="section-subtitle">
+            Trusted by premier educators, principals, and school managements across Central and Northern India.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div style="color: #e8a838; font-size: 1.25rem; margin-bottom: 0.75rem;">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "Professional, creative and extremely well-organized. The entire annual function was a wonderful experience for our students and staff."
+            </p>
+            <div class="testimonial-author-row">
+              <div class="author-avatar">DPS</div>
+              <div class="author-info">
+                <h4>Principal</h4>
+                <p>Delhi Public School, Indore</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div style="color: #e8a838; font-size: 1.25rem; margin-bottom: 0.75rem;">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "EloQuentia has truly transformed our students. We see more confidence, better communication and greater enthusiasm in every activity."
+            </p>
+            <div class="testimonial-author-row">
+              <div class="author-avatar">SIS</div>
+              <div class="author-info">
+                <h4>Vice Principal</h4>
+                <p>Sage International School, Bhopal</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div style="color: #e8a838; font-size: 1.25rem; margin-bottom: 0.75rem;">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              "The biggest relief was for our teachers. Not a single teacher had to stay back late dealing with sound glitches or costumes. EloQuentia handled everything with military precision."
+            </p>
+            <div class="testimonial-author-row">
+              <div class="author-avatar">HA</div>
+              <div class="author-info">
+                <h4>Academic Director</h4>
+                <p>Heritage Residential Academy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Contact / CTA Section -->
+    <section class="cta-section" id="contact" style="padding: 5rem 0 3rem;">
+      <div class="container">
+        <!-- Hotlines Banner -->
+        <div class="bottom-hotlines-strip">
+          <div class="hotlines-info-col">
+            <div class="hotlines-phone-badge">📞</div>
+            <div>
+              <div class="hotlines-label">Direct School Partnership Hotlines</div>
+              <div class="hotlines-numbers-row">
+                <a href="tel:+919876543210" class="hotline-link-btn">+91 98765 43210</a>
+                <span style="color: var(--border-subtle);">|</span>
+                <a href="tel:+919826088210" class="hotline-link-btn">+91 98260 88210</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotlines-actions">
+            <a href="mailto:info@eloquentia.in" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span>✉️ info@eloquentia.in</span>
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span>💬 WhatsApp Director</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-banner-box">
+          <div class="cta-info-col">
+            <span class="section-tag" style="margin-bottom: 1rem;">Let's Connect</span>
+            <h2>
+              Let's Create <span class="script-flourish">Brighter Futures</span> Together.
+            </h2>
+            <p>
+              Partner with <strong>EloQuentia</strong> to bring expression, confidence, and creativity to every student. Reserve your school's annual function production or year-round curriculum partnership.
+            </p>
+
+            <div class="cta-contact-details">
+              <div class="contact-pill-item">
+                <div class="contact-icon-sq">📞</div>
+                <div>
+                  <div class="contact-label">Telephone Hotlines</div>
+                  <div class="contact-val">
+                    <a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a> / 
+                    <a href="tel:+919826088210" style="color: inherit; text-decoration: none;">+91 98260 88210</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-pill-item">
+                <div class="contact-icon-sq">✉️</div>
+                <div>
+                  <div class="contact-label">Official Correspondence</div>
+                  <div class="contact-val">
+                    <a href="mailto:info@eloquentia.in" style="color: inherit; text-decoration: none;">info@eloquentia.in</a> / 
+                    <a href="mailto:productions@eloquentia.in" style="color: inherit; text-decoration: none;">productions@eloquentia.in</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-pill-item">
+                <div class="contact-icon-sq">🌐</div>
+                <div>
+                  <div class="contact-label">Official Website</div>
+                  <div class="contact-val">www.eloquentia.in</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Request for Proposal Form -->
+          <div class="cta-form-col">
+            <form class="consultation-form" id="mainContactForm" onsubmit="handleMainFormSubmit(event)">
+              <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--text-title); font-weight: 800;">
+                Initiate School Partnership
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Submit your school's requirements for a customized proposal and date availability check.
+              </p>
+
+              <div class="form-group">
+                <label class="form-label" for="schoolName">School / Academic Institution Name *</label>
+                <input type="text" id="schoolName" class="form-input" placeholder="e.g. Delhi Public School, Indore" required>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="contactPerson">Principal / Contact Person *</label>
+                  <input type="text" id="contactPerson" class="form-input" placeholder="e.g. Dr. / Mrs. Sharma" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone">Mobile / WhatsApp Number *</label>
+                  <input type="tel" id="phone" class="form-input" placeholder="+91 98XXXXXXXX" required>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="eventSeason">Partnership Interest</label>
+                  <select id="eventSeason" class="form-select">
+                    <option value="Annual Function Production">Annual Function Production (Turnkey)</option>
+                    <option value="Year-Round 5-Pillar Partnership">Year-Round 5-Pillar School Partnership</option>
+                    <option value="Drama & Public Speaking Workshops">Drama & Public Speaking Workshops</option>
+                    <option value="Teacher Training Programme">Teacher Training Programme</option>
+                    <option value="Customized School Milestone Event">Customized School Milestone Event</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="themeInterest">Preferred Theme Direction</label>
+                  <select id="themeInterest" class="form-select">
+                    <option value="Cultural Celebrations & Heritage">Cultural Celebrations & Indian Heritage</option>
+                    <option value="Mythology & Historical Epics">Mythology & Historical Epics (Dastaan-e-Hind)</option>
+                    <option value="Social Messages & Ecology">Social Messages & Ecology (Cosmic Odyssey)</option>
+                    <option value="Literary Adaptations & Shakespeare">Literary Adaptations & Shakespeare</option>
+                    <option value="Global Cultures & World Harmony">Global Cultures & World Harmony</option>
+                    <option value="Bespoke Milestone Concept">Bespoke Milestone Concept</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="notes">Special Requirements / Student Count</label>
+                <textarea id="notes" class="form-textarea" rows="3"
+                  placeholder="Mention number of student performers, venue (amphitheatre / indoor hall), or expected timeline..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                <span>Submit RFP & Reserve Season Date</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-badge">
+              <svg viewBox="0 0 32 32" fill="none">
+                <defs>
+                  <linearGradient id="eloGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#c27844" />
+                    <stop offset="55%" stop-color="#d4a24c" />
+                    <stop offset="100%" stop-color="#e8a838" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 4L5 27h6l2.4-5.2h7.2L23 27h6L16 4zm0 7.5L18.4 17.5h-4.8L16 11.5z" fill="url(#eloGradFoot)" />
+                <circle cx="16" cy="4.5" r="2.5" fill="#e8a838" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">ELOQUENTIA</span>
+              <span class="brand-subtitle">Where Expression Finds Its Voice</span>
+            </div>
+          </div>
+          <p>
+            A school partnership movement for student development and creative excellence. Empowering young minds through performing arts, communication, and turnkey annual function productions.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Core Services</div>
+          <ul class="footer-links-list">
+            <li><a href="#production">Annual Function Production</a></li>
+            <li><a href="#services">Drama & Theatre Workshops</a></li>
+            <li><a href="#services">Communication & Public Speaking</a></li>
+            <li><a href="#services">Personality Development</a></li>
+            <li><a href="#services">Teacher Training</a></li>
+            <li><a href="#services">Customized School Events</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">5 Pillars & Themes</div>
+          <ul class="footer-links-list">
+            <li><a href="#partnership">Drama & Expression</a></li>
+            <li><a href="#partnership">Speech & Communication</a></li>
+            <li><a href="#partnership">Creativity & Imagination</a></li>
+            <li><a href="#themes">Cultural Celebrations</a></li>
+            <li><a href="#themes">Mythology & Heritage</a></li>
+            <li><a href="#budget">Interactive Budget Planner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contact & Hotlines</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.85rem;">
+            Serving prestigious schools across Central, Northern and Western India.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--terracotta-primary); font-weight: 800; margin-bottom: 0.35rem;">
+            <a href="tel:+919876543210" style="color: inherit; text-decoration: none;">📞 +91 98765 43210</a>
+          </p>
+          <p style="font-size: 0.95rem; color: var(--terracotta-primary); font-weight: 800; margin-bottom: 0.35rem;">
+            <a href="tel:+919826088210" style="color: inherit; text-decoration: none;">📞 +91 98260 88210</a>
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-body); margin-top: 0.5rem;">
+            ✉️ <a href="mailto:info@eloquentia.in" style="color: inherit; text-decoration: none;">info@eloquentia.in</a>
+          </p>
+          <p style="font-size: 0.85rem; color: var(--text-body);">
+            🌐 <a href="https://www.eloquentia.in" style="color: inherit; text-decoration: none;">www.eloquentia.in</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> EloQuentia. Where Expression Finds Its Voice. All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#hero" style="color: var(--text-dim); text-decoration: none;">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Modal for Proposal & Consultation -->
+  <div class="modal-overlay" id="consultationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeConsultationModal()" aria-label="Close dialog">&times;</button>
+      <div style="margin-bottom: 1.5rem;">
+        <span class="section-tag" id="modalTag">Annual Function Proposal</span>
+        <h3 id="modalTitle" style="font-size: 1.6rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+          Reserve Season Date & Get Official Estimate
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Connect directly with EloQuentia to align on themes, student rehearsal schedules, and budget allocations.
+        </p>
+      </div>
+
+      <form id="modalForm" onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="modalSchool">School / College Name *</label>
+          <input type="text" id="modalSchool" class="form-input" placeholder="e.g. Your School's Full Name" required>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="modalName">Contact Name & Title *</label>
+            <input type="text" id="modalName" class="form-input" placeholder="e.g. Prof. / Mrs. Verma" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modalPhone">Mobile / WhatsApp *</label>
+            <input type="tel" id="modalPhone" class="form-input" placeholder="+91 98XXXXXXXX" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalContext">Selected Theme or Budget Estimate</label>
+          <input type="text" id="modalContext" class="form-input" readonly
+            style="background: rgba(194, 120, 68, 0.06); border-color: var(--border-subtle); color: var(--terracotta-primary); font-weight: 600;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalNotes">Additional Details / Questions</label>
+          <textarea id="modalNotes" class="form-textarea" rows="2"
+            placeholder="Mention venue size, dates, or specific questions..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem;">
+          Confirm Consultation Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toastNotice" role="alert">
+    <span style="font-size: 1.25rem;">✨</span>
+    <span id="toastMessage">Your Consultation Request has been prepared!</span>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+
+</html>
